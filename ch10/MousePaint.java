@@ -24,8 +24,8 @@ public class MousePaint extends JPanel implements MouseListener,
 
     private static final Color backColor = Color.gray;  // Background color 
     private static final Color lineColor = Color.red;   // Outline color
-    Color  mouseColor[] = { Color.BLACK, Color.BLUE, Color.CYAN, Color.GREEN, Color.MAGENTA, Color.ORANGE, Color.PINK, Color.RED, Color.YELLOW};
-    int  currentColor = 0;
+    private static Color  mouseColor[] = { Color.BLACK, Color.BLUE, Color.CYAN, Color.GREEN, Color.MAGENTA, Color.ORANGE, Color.PINK, Color.RED, Color.YELLOW};
+    private int  currentColor = 0;
     
     private Point mouse = new Point();                  // Mouse's current location
   
@@ -90,7 +90,7 @@ public class MousePaint extends JPanel implements MouseListener,
     	if (e.getModifiers() == MouseEvent.BUTTON3_MASK){
     		currentColor++;
     		//System.out.println(currentColor); // Debug
-    		if(currentColor > 8){
+    		if(currentColor > mouseColor.length-1){
     			currentColor = 0;
     		}
     		repaint();
