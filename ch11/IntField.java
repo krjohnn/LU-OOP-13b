@@ -14,7 +14,8 @@ package ch11;
 import javax.swing.*;
 
 public class IntField extends JTextField {  
-    private int bound = Integer.MAX_VALUE;
+	private int minbound = Integer.MIN_VALUE;
+    private int maxbound = Integer.MAX_VALUE;
    
     /**
      * IntField() constructor merely invokes its superclass 
@@ -28,9 +29,10 @@ public class IntField extends JTextField {
     /**
      * This IntField() constructor sets the field's bound. 
      */
-    public IntField(int size, int max) {
+    public IntField(int size, int min, int max) {
         super(size);
-        bound = max;
+        minbound = min;
+        maxbound = max;
     }
 
     /**
@@ -43,8 +45,10 @@ public class IntField extends JTextField {
      */
     public int getInt() throws NumberFormatException, IntOutOfRangeException {
         int num = Integer.parseInt(getText());            
-        if (num > bound)
-            throw new IntOutOfRangeException(bound);
+        if (num < minbound)
+            throw new IntOutOfRangeException(minbound);
+        if (num > maxbound)
+            throw new IntOutOfRangeException(maxbound);
         return num;
     } // getInt()
 
