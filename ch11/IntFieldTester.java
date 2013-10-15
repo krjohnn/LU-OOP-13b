@@ -23,7 +23,7 @@ public class IntFieldTester extends JPanel implements ActionListener  {
     public static final int WIDTH = 300, HEIGHT = 300;
     
     private JLabel prompt = new JLabel("Input an integer in range 100 to 200: ");
-    private IntField intField = new IntField(12, 100, 200);
+    private IntField intField = new IntField(12, 100, 200); // Add custom range?
     private int userInt;
     private String message = "Hello";
     
