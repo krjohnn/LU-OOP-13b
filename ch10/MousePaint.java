@@ -86,6 +86,7 @@ public class MousePaint extends JPanel implements MouseListener,
     public void mouseEntered(MouseEvent e) { } // These five interface methods are not used
     public void mouseExited(MouseEvent e)  { } //  but must be defined.
     public void mousePressed(MouseEvent e) {
+    	mouse = e.getPoint();    
     	if (e.getModifiers() == MouseEvent.BUTTON3_MASK){
     		currentColor++;
     		//System.out.println(currentColor); // Debug
