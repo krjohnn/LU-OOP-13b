@@ -87,7 +87,7 @@ public class MousePaint extends JPanel implements MouseListener,
     public void mouseExited(MouseEvent e)  { } //  but must be defined.
     public void mousePressed(MouseEvent e) {
     	mouse = e.getPoint();    
-    	if (e.getModifiers() == MouseEvent.BUTTON3_MASK){
+    	if (e.getButton() == MouseEvent.BUTTON3){
     		currentColor++;
     		//System.out.println(currentColor); // Debug
     		if(currentColor > mouseColor.length-1){
